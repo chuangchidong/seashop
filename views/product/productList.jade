@@ -1,0 +1,36 @@
+if page.totalPages > 0
+    each pro in Commoditys
+        .pro-li
+            .p-l-o(proid=pro._id)
+                input.curPage(type="hidden",value="#{page.curPage}")
+                input.totalPage(type="hidden",value="#{page.totalPages}")
+                input#bigImg(type="hidden" value="#{pro.imgSrc}")
+                .img(productImg=pro.imgSrc)
+                    img(src=pro.imgSrc)
+                //.buy-count 已售#{pro.buyCount}件
+                .p-c.clicknolin(product=pro._id)
+                    h2.mar-1 #{pro.name}
+                    //h3.mar-05 #{pro.desc}
+                    if pro.proBrand
+                        h3.mar-1 品牌: #{pro.proBrand}
+                    if pro.title
+                        h3.mar-1 规格: #{pro.title}
+                    if pro.price
+                        h1 ￥#{pro.price}
+                    else if pro.price === 0
+                        h2.our-color 售价待定
+                    else
+                        h2.our-color 登录后可见
+                if pro.favorite
+                    .collect.c-yes.clicknolin
+                else
+                    .collect.c-no.clicknolin
+                if pro.choose != true && pro.price != 0 && pro.price
+                    .add-less
+                        .less.clicknolin
+                        .num #{pro.basketCount}
+                        .add.clicknolin
+                else if pro.price && pro.choose
+                    .add-less.mul-standard.click(product=pro.pid) 选择型号
+else
+    .erro-content 暂无商品

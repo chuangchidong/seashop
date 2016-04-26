@@ -1,0 +1,55 @@
+extends ../layout
+block title
+    title add commodity
+block content
+    .content
+        header
+            .header
+        section.box
+            .buy-new-main.box
+                ul
+                    li.title 添加新商品
+                    li
+                        .name
+                            i.red-color ※
+                            i 商品类别
+                        .buy-ifi
+                            .fl-left
+                                .buy-down.fmenu
+                                input.fmenu(id="category" menu="" placeholder="分类" type="text" readonly=true)
+                                .select-b(style="display: none ")
+                    li
+                        .name
+                            input#domain(type="hidden")
+                            i.red-color ※
+                            i 商品名称:
+                            input#name(type="text" placeholder="请输入商品名称" )
+                    li
+                        .name 商品图片
+                        .buy-new-imgs
+                            #avatar.select-img
+                                input#hid_avatar(type="hidden" name="avatar" value="")
+                                a#a_avatar(href="#",style="display:block !important;")
+                                    i
+                                    span(text="选择文件")
+                            .clear
+                    li
+                        .name 商品零售价:
+                            input#price(type="text" placeholder="请输入建议零售价")
+                    li
+                        .name 商品品牌:
+                            input#brand(type="text" placeholder="请输入商品所属品牌")
+                    li
+                        .name 商品规格:
+                            input#standard(type="text" placeholder="请选填商品规格")
+                    li
+                        .name 备注:
+                            input#remark(type="text" placeholder="请选填商品备注")
+        footer
+            .button-big
+                a.submit 提交
+block script
+    script(type="text/javascript").
+        seajs.use("shopkeeper", function(shopkeeper){
+            console.log("添加新品页...")
+        });

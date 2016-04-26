@@ -1,0 +1,35 @@
+extends layout
+block title
+  title seashop
+block content
+  .content.index
+    header
+      .header
+        .in-addr
+          span.down SEASHOP
+        .in-search
+          .s
+            .s-pic
+            input(id="search" name="name" placeholder="What are you looking for ..." onclick="search()")
+    section
+      nav.in-nav
+        .nav-l
+        .nav-m
+          .nav-list
+            ul(style="width:#{navWidth}rem")
+              each cate,index in categorys
+                if index == 0
+                  li.category.active(id="category#{cate._id}" value="#{cate._id}" onclick="getProdList(this,'#{cate._id}')") #{cate.name}
+                else
+                  li.category(id="category#{cate._id}" value="#{cate._id}" onclick="getProdList(this,'#{cate._id}')") #{cate.name}
+         .nav-r
+      .pro-list#loading
+        .pro-listAll
+    //footer
+    //.lottery.clicknolin
+
+block script
+  script(type="text/javascript").
+    seajs.use("index", function(index){
+      console.log("loading...")
+    });
