@@ -7,6 +7,17 @@ define(function(require, exports, module){
     var _validate = require("framework");
 
     loadCategory();
+    loadRemoteDomain();
+
+    function loadRemoteDomain(){
+        $.get("/user/qiniuDomain",{},function(data){
+            if(data){
+                $('#domain').val(data.domain);
+                upload.config("avatar",".6rem",".6rem");
+            }
+        });
+    }
+
     function loadCategory(){
         var _menu = $('#category').parent();
         var _div = _menu.find("div[class=select-b]");

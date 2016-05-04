@@ -26,7 +26,7 @@ exports.list = function(req,res){
                curPage : Math.floor(options.skip/options.limit),
             totalPages : Math.ceil(totalPages/options.limit)
         };
-        console.log("-----"+JSON.stringify(model))
+        console.log("--commodity---list--"+JSON.stringify(model))
         res.render('./product/productList',model);
     });
 }

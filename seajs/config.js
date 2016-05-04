@@ -8,9 +8,9 @@ seajs.config({
         "bootstrap": "/javascripts/bootstrap.min.js",
 
         //qiniu
-        //"plupload" : "/javascripts/utils/qiniu/plupload.full.min.js",
-        //"qiniu"    : "/javascripts/utils/qiniu/qiniu.js",
-        //"upload"   : "/javascripts/utils/qiniu/upload.js",
+        "plupload" : "/qiniu/plupload.full.min.js",
+        "qiniu"    : "/qiniu/qiniu.js",
+        "upload"   : "/qiniu/upload.js",
 
         "index" : "/javascripts/index.js",
         //commodity
@@ -20,8 +20,8 @@ seajs.config({
         "shopkeeper" : "javascripts/shopkeeper/shopkeeper.js"
     },
     preload: [
-        "jquery"/*,
+        "jquery",
         "plupload",
-        "upload"*/
+        "upload"
     ]
 });

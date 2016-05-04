@@ -33,5 +33,5 @@ exports.init = function(app) {
 };
 //重定向到首页 必须三个参数
 var index = function(req, res, next) {
-    res.render('index');
+    res.redirect('index/list');
 };
